@@ -1,146 +1,142 @@
-const education = [
-  {
-    degree: "Bachelor of Technology",
-    field: "Information Technology",
-    institution: "Government Engineering College, Bilaspur",
-    location: "Bilaspur, Chhattisgarh",
-    period: "2022 – 2026",
-    score: "8.2 / 10.0 CGPA",
-    coursework: [
-      "Data Structures & Algorithms",
-      "Object-Oriented Programming",
-      "Database Management Systems",
-      "Operating Systems",
-      "Computer Networks",
-      "Software Engineering",
-    ],
-  },
-  {
-    degree: "Class XII",
-    field: "Senior Secondary",
-    institution: "Vishwadeep Senior Secondary School",
-    location: "Durg, Chhattisgarh",
-    period: "2021 – 2022",
-    score: "86%",
-    coursework: [],
-  },
-  {
-    degree: "Class X",
-    field: "Secondary School",
-    institution: "Vishwadeep Senior Secondary School",
-    location: "Durg, Chhattisgarh",
-    period: "2019 – 2020",
-    score: "90%",
-    coursework: [],
-  },
-];
+import { FaGraduationCap, FaCalendarAlt, FaMapMarkerAlt, FaBook } from "react-icons/fa";
 
 function Education() {
+  const educationList = [
+    {
+      degree: "Bachelor of Technology (B.Tech)",
+      field: "Information Technology",
+      institution: "Government Engineering College, Bilaspur",
+      location: "Bilaspur, Chhattisgarh",
+      period: "2022 – 2026",
+      score: "CGPA: 8.2 / 10.0",
+      highlight: "Department Top 5 Ranking",
+      coursework: [
+        "Data Structures & Algorithms",
+        "Object-Oriented Programming",
+        "Database Management Systems",
+        "Operating Systems",
+        "Computer Networks",
+        "Software Engineering",
+      ],
+    },
+    {
+      degree: "Class XII (Senior Secondary)",
+      field: "Science & Mathematics Stream",
+      institution: "Vishwadeep Senior Secondary School",
+      location: "Durg, Chhattisgarh",
+      period: "2021 – 2022",
+      score: "86.0%",
+      highlight: "Distinction",
+      coursework: ["Physics", "Chemistry", "Mathematics", "Computer Science"],
+    },
+    {
+      degree: "Class X (Secondary School)",
+      field: "General Secondary Curriculum",
+      institution: "Vishwadeep Sr. Sec. School",
+      location: "Durg, Chhattisgarh",
+      period: "2019 – 2020",
+      score: "90.0%",
+      highlight: "High Distinction",
+      coursework: [],
+    },
+  ];
+
   return (
-    <section
-      id="education"
-      className="bg-slate-900 px-6 py-24 text-white"
-    >
+    <section id="education" className="relative py-24 px-6 bg-[#090d16]">
+      {/* Background glow */}
+      <div className="pointer-events-none absolute bottom-1/4 left-1/4 h-80 w-80 rounded-full bg-indigo-600/5 blur-[120px]" />
+
       <div className="mx-auto max-w-5xl">
-
-        {/* Heading */}
-        <div className="mb-14 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-cyan-400">
-            Academic Background
-          </p>
-
-          <h2 className="text-4xl font-bold md:text-5xl">
-            My <span className="text-cyan-400">Education</span>
+        {/* Section Heading */}
+        <div className="mb-16 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/20 bg-purple-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-purple-300">
+            Academic Foundation
+          </div>
+          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+            Education &{" "}
+            <span className="bg-gradient-to-r from-purple-400 via-indigo-300 to-blue-400 bg-clip-text text-transparent">
+              Credentials
+            </span>
           </h2>
-
-          <p className="mx-auto mt-5 max-w-2xl text-gray-400">
-            My academic journey and foundation in computer science and
-            information technology.
+          <p className="mx-auto mt-4 max-w-2xl text-slate-400 text-sm sm:text-base">
+            Strong foundational background in Computer Science and Information Technology with consistent academic distinction.
           </p>
         </div>
 
-        {/* Education timeline */}
-        <div className="relative">
-
-          {/* Timeline */}
-          <div className="absolute left-3 top-0 hidden h-full w-px bg-cyan-400/30 md:block" />
-
-          <div className="space-y-8">
-            {education.map((item, index) => (
-              <div
-                key={`${item.degree}-${index}`}
-                className="relative md:pl-12"
-              >
-
-                {/* Timeline dot */}
-                <div className="absolute left-0 top-7 hidden h-7 w-7 items-center justify-center rounded-full border border-cyan-400 bg-slate-900 md:flex">
-                  <div className="h-2 w-2 rounded-full bg-cyan-400" />
-                </div>
-
-                {/* Card */}
-                <div className="rounded-2xl border border-white/10 bg-slate-950 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40">
-
-                  <div className="flex flex-col justify-between gap-4 md:flex-row">
-
-                    <div>
-                      <p className="text-sm font-semibold uppercase tracking-wider text-cyan-400">
-                        {item.degree}
-                      </p>
-
-                      <h3 className="mt-2 text-2xl font-bold">
-                        {item.field}
-                      </h3>
-
-                      <p className="mt-2 text-lg text-gray-300">
-                        {item.institution}
-                      </p>
-
-                      <p className="mt-1 text-sm text-gray-500">
-                        {item.location}
-                      </p>
-                    </div>
-
-                    <div className="md:text-right">
-                      <span className="inline-block rounded-full bg-cyan-400/10 px-4 py-2 text-sm text-cyan-300">
-                        {item.period}
-                      </span>
-
-                      <p className="mt-3 text-2xl font-bold text-cyan-400">
-                        {item.score}
-                      </p>
-                    </div>
-
+        {/* Education Timeline */}
+        <div className="space-y-8">
+          {educationList.map((item, index) => (
+            <div
+              key={`${item.degree}-${index}`}
+              className="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/40 p-6 sm:p-8 backdrop-blur-xl transition duration-300 hover:border-purple-500/40 hover:bg-slate-900/60"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400">
+                    <FaGraduationCap size={20} />
                   </div>
 
-                  {/* Coursework */}
-                  {item.coursework.length > 0 && (
-                    <div className="mt-7 border-t border-white/10 pt-6">
-                      <h4 className="font-semibold">
-                        Relevant Coursework
-                      </h4>
-
-                      <div className="mt-4 flex flex-wrap gap-3">
-                        {item.coursework.map((course) => (
-                          <span
-                            key={course}
-                            className="rounded-full bg-cyan-400/10 px-4 py-2 text-sm text-cyan-300"
-                          >
-                            {course}
-                          </span>
-                        ))}
-                      </div>
+                  <div>
+                    <div className="flex items-center gap-2.5 flex-wrap">
+                      <h3 className="text-xl font-bold text-white">
+                        {item.degree}
+                      </h3>
+                      <span className="rounded-full bg-purple-500/15 border border-purple-500/30 px-2.5 py-0.5 text-[11px] font-semibold text-purple-300">
+                        {item.highlight}
+                      </span>
                     </div>
-                  )}
 
+                    <p className="text-sm font-semibold text-purple-300 mt-1">
+                      {item.field}
+                    </p>
+
+                    <p className="text-sm text-slate-300 mt-0.5">
+                      {item.institution}
+                    </p>
+
+                    <p className="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                      <FaMapMarkerAlt size={11} className="text-slate-500" />
+                      {item.location}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="sm:text-right flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-end gap-2 border-t sm:border-t-0 border-white/5 pt-3 sm:pt-0">
+                  <div className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-slate-800/60 px-3 py-1 text-xs font-mono text-slate-300">
+                    <FaCalendarAlt size={10} className="text-purple-400" />
+                    <span>{item.period}</span>
+                  </div>
+
+                  <p className="font-mono text-xl font-extrabold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                    {item.score}
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
 
+              {item.coursework.length > 0 && (
+                <div className="mt-6 border-t border-white/5 pt-4">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2.5">
+                    <FaBook size={11} className="text-purple-400" />
+                    <span>Key Coursework & Domains:</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {item.coursework.map((course) => (
+                      <span
+                        key={course}
+                        className="rounded-md border border-white/5 bg-slate-800/40 px-2.5 py-1 text-xs font-medium text-slate-300"
+                      >
+                        {course}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-export default Education;
+export default Education;
