@@ -310,34 +310,34 @@ function Skills() {
   };
 
   return (
-    <section id="skills" className="relative py-24 px-6 bg-[#0b0f19]">
+    <section id="skills" className="relative py-16 sm:py-24 px-4 sm:px-6 bg-[#0b0f19]">
       {/* Background Glow */}
       <div className="pointer-events-none absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-blue-600/5 blur-[120px]" />
 
       <div className="mx-auto max-w-7xl">
         {/* Section Heading */}
-        <div className="mb-12 text-center">
+        <div className="mb-10 sm:mb-12 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/20 bg-purple-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-purple-300">
             Technical Stack
           </div>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="mt-4 text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight break-words">
             Curated{" "}
             <span className="bg-gradient-to-r from-purple-400 via-indigo-300 to-blue-400 bg-clip-text text-transparent">
               Engineering Expertise
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-slate-400 text-sm sm:text-base">
+          <p className="mx-auto mt-4 max-w-2xl text-slate-400 text-xs sm:text-base">
             Structured across six foundational domains—distinguishing proven production experience from applied project work and ongoing learning.
           </p>
         </div>
 
         {/* Category Pill Tabs */}
-        <div className="mb-10 flex flex-wrap items-center justify-center gap-2">
+        <div className="mb-8 sm:mb-10 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`rounded-full px-4 py-2 text-xs font-medium transition-all ${
+              className={`rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-medium transition-all ${
                 activeCategory === cat
                   ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-md shadow-purple-600/25 scale-105"
                   : "border border-white/5 bg-slate-900/60 text-slate-400 hover:border-white/20 hover:text-white"
@@ -349,31 +349,31 @@ function Skills() {
         </div>
 
         {/* Legend / Distinction Bar */}
-        <div className="mb-8 flex flex-wrap items-center justify-center gap-4 text-[11px] text-slate-400">
+        <div className="mb-6 sm:mb-8 flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[10px] sm:text-[11px] text-slate-400">
           <span className="font-semibold text-slate-300">Experience Key:</span>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-emerald-300">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 sm:px-2.5 py-0.5 text-emerald-300">
             ● Practical Experience
           </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-2.5 py-0.5 text-blue-300">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-2 sm:px-2.5 py-0.5 text-blue-300">
             ● Applied Project
           </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 px-2.5 py-0.5 text-purple-300">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 px-2 sm:px-2.5 py-0.5 text-purple-300">
             ● Continuous Learning / Academic
           </span>
         </div>
 
         {/* Skills Cards Grid */}
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        <div className="grid grid-cols-1 min-[360px]:grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
           {filteredSkills.map((skill) => {
             const Icon = skill.icon;
             return (
               <div
                 key={skill.name}
-                className="group relative flex flex-col justify-between rounded-xl border border-white/5 bg-slate-900/40 p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/40 hover:bg-slate-900/80 hover:shadow-lg hover:shadow-purple-500/10"
+                className="group relative flex flex-col justify-between rounded-xl border border-white/5 bg-slate-900/40 p-3.5 sm:p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/40 hover:bg-slate-900/80 hover:shadow-lg hover:shadow-purple-500/10"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className={`text-2xl ${skill.color} transition-transform group-hover:scale-110`}>
+                  <div className="flex items-center justify-between mb-2.5 sm:mb-3">
+                    <span className={`text-xl sm:text-2xl ${skill.color} transition-transform group-hover:scale-110`}>
                       <Icon />
                     </span>
                     <span
@@ -388,13 +388,13 @@ function Skills() {
                         : "Learning"}
                     </span>
                   </div>
-                  <h3 className="text-sm font-semibold text-white group-hover:text-purple-300 transition-colors">
+                  <h3 className="text-xs sm:text-sm font-semibold text-white group-hover:text-purple-300 transition-colors">
                     {skill.name}
                   </h3>
                 </div>
 
-                <div className="mt-3 border-t border-white/5 pt-2">
-                  <span className="text-[11px] text-slate-400 leading-tight block truncate">
+                <div className="mt-2.5 sm:mt-3 border-t border-white/5 pt-2">
+                  <span className="text-[10px] sm:text-[11px] text-slate-400 leading-tight block break-words">
                     {skill.highlight}
                   </span>
                 </div>

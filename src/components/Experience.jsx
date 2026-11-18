@@ -61,51 +61,54 @@ function Experience() {
   ];
 
   return (
-    <section id="experience" className="relative py-24 px-6 bg-[#090d16]">
+    <section id="experience" className="relative py-16 sm:py-24 px-4 sm:px-6 bg-[#090d16]">
       {/* Background glow */}
-      <div className="pointer-events-none absolute top-1/3 left-0 h-96 w-96 rounded-full bg-purple-600/5 blur-[130px]" />
+      <div className="pointer-events-none absolute top-1/3 left-0 h-80 sm:h-96 w-80 sm:w-96 rounded-full bg-purple-600/5 blur-[130px]" />
 
       <div className="mx-auto max-w-5xl">
         {/* Section Heading */}
-        <div className="mb-16 text-center">
+        <div className="mb-12 sm:mb-16 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/20 bg-purple-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-purple-300">
             Career Journey
           </div>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="mt-4 text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight break-words">
             Work{" "}
             <span className="bg-gradient-to-r from-purple-400 via-indigo-300 to-blue-400 bg-clip-text text-transparent">
               Experience
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-slate-400 text-sm sm:text-base">
+          <p className="mx-auto mt-4 max-w-2xl text-slate-400 text-xs sm:text-base">
             Hands-on professional software engineering roles across financial operations, manufacturing ERP systems, and web application development.
           </p>
         </div>
 
         {/* Timeline */}
-        <div className="relative border-l border-white/10 pl-6 sm:pl-10 space-y-12 ml-3 sm:ml-6">
+        <div className="relative">
           {experiences.map((exp, index) => (
-            <div key={`${exp.company}-${index}`} className="relative group">
+            <div
+              key={`${exp.company}-${index}`}
+              className="relative pl-6 sm:pl-10 pb-10 sm:pb-12 last:pb-0 border-l border-white/10 ml-3.5 sm:ml-6 group"
+            >
               {/* Timeline Indicator Dot */}
-              <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border border-purple-500/40 bg-[#090d16] text-purple-400 shadow-md shadow-purple-500/20 group-hover:border-purple-400 group-hover:scale-110 transition-transform">
+              <div className="absolute -left-[15px] sm:-left-[17px] top-1.5 flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border border-purple-500/40 bg-[#090d16] text-purple-400 shadow-md shadow-purple-500/20 group-hover:border-purple-400 group-hover:scale-110 transition-transform">
                 <FaBriefcase size={12} />
               </div>
 
               {/* Card Container */}
-              <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-6 sm:p-8 backdrop-blur-xl transition-all duration-300 hover:border-purple-500/30 hover:bg-slate-900/60 hover:shadow-xl hover:shadow-purple-500/5">
+              <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-4 sm:p-6 md:p-8 backdrop-blur-xl transition-all duration-300 hover:border-purple-500/30 hover:bg-slate-900/60 hover:shadow-xl hover:shadow-purple-500/5">
                 {/* Header */}
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-white/5 pb-4 mb-5">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-white/5 pb-4 mb-4 sm:mb-5">
                   <div>
                     <div className="flex items-center gap-2.5 flex-wrap">
-                      <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-purple-300 transition-colors">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white group-hover:text-purple-300 transition-colors">
                         {exp.role}
                       </h3>
-                      <span className={`rounded-full border px-2.5 py-0.5 text-[11px] font-semibold ${exp.badgeColor}`}>
+                      <span className={`rounded-full border px-2.5 py-0.5 text-[10px] sm:text-[11px] font-semibold ${exp.badgeColor}`}>
                         {exp.type}
                       </span>
                     </div>
 
-                    <p className="mt-1 text-base font-semibold text-purple-400">
+                    <p className="mt-1 text-sm sm:text-base font-semibold text-purple-400">
                       {exp.company}
                     </p>
 
@@ -117,16 +120,16 @@ function Experience() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-1.5 self-start rounded-full border border-white/10 bg-slate-800/60 px-3.5 py-1.5 text-xs font-mono font-medium text-slate-300">
+                  <div className="flex items-center gap-1.5 self-start rounded-full border border-white/10 bg-slate-800/60 px-3 py-1 sm:px-3.5 sm:py-1.5 text-xs font-mono font-medium text-slate-300">
                     <FaCalendarAlt size={11} className="text-purple-400" />
                     <span>{exp.period}</span>
                   </div>
                 </div>
 
                 {/* Bullets */}
-                <div className="space-y-3 mb-6">
+                <div className="space-y-2.5 sm:space-y-3 mb-5 sm:mb-6">
                   {exp.bullets.map((bullet, bIdx) => (
-                    <div key={bIdx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    <div key={bIdx} className="flex items-start gap-2.5 sm:gap-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
                       <span className="mt-1.5 flex h-1.5 w-1.5 flex-shrink-0 rounded-full bg-purple-400" />
                       <span>{bullet}</span>
                     </div>
@@ -134,14 +137,14 @@ function Experience() {
                 </div>
 
                 {/* Tech Chips */}
-                <div className="flex flex-wrap items-center gap-2 border-t border-white/5 pt-4">
-                  <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mr-1">
+                <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 border-t border-white/5 pt-3.5 sm:pt-4">
+                  <span className="text-[10px] sm:text-[11px] font-semibold text-slate-400 uppercase tracking-wider mr-1">
                     Tech:
                   </span>
                   {exp.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-md border border-white/5 bg-slate-800/50 px-2.5 py-1 text-xs font-medium text-slate-300"
+                      className="rounded-md border border-white/5 bg-slate-800/50 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[11px] sm:text-xs font-medium text-slate-300"
                     >
                       {tech}
                     </span>

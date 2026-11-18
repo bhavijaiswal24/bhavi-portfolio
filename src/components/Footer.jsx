@@ -12,7 +12,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="border-t border-white/10 bg-[#070a12] px-6 py-12 text-slate-400">
+    <footer className="border-t border-white/10 bg-[#070a12] px-4 sm:px-6 py-10 sm:py-12 text-slate-400">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 md:flex-row">
         {/* Logo / Tagline */}
         <div className="text-center md:text-left">
@@ -33,12 +33,12 @@ function Footer() {
         </div>
 
         {/* Navigation Quick Links */}
-        <div className="flex flex-wrap items-center justify-center gap-4 text-xs">
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs">
           {links.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-slate-400 transition hover:text-purple-300"
+              className="py-1 px-1.5 text-slate-400 transition hover:text-purple-300"
             >
               {link.name}
             </a>
@@ -53,9 +53,9 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub profile"
-              className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-slate-900/60 text-slate-300 transition hover:border-purple-400/50 hover:text-white"
+              className="flex h-10 w-10 sm:h-9 sm:w-9 items-center justify-center rounded-xl border border-white/10 bg-slate-900/60 text-slate-300 transition hover:border-purple-400/50 hover:text-white"
             >
-              <FaGithub size={14} />
+              <FaGithub size={15} />
             </a>
 
             <a
@@ -63,17 +63,17 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
-              className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-slate-900/60 text-slate-300 transition hover:border-blue-400/50 hover:text-white"
+              className="flex h-10 w-10 sm:h-9 sm:w-9 items-center justify-center rounded-xl border border-white/10 bg-slate-900/60 text-slate-300 transition hover:border-blue-400/50 hover:text-white"
             >
-              <FaLinkedinIn size={14} />
+              <FaLinkedinIn size={15} />
             </a>
 
             <a
               href="mailto:bhavijaiswal241203@gmail.com"
               aria-label="Send email"
-              className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-slate-900/60 text-slate-300 transition hover:border-purple-400/50 hover:text-white"
+              className="flex h-10 w-10 sm:h-9 sm:w-9 items-center justify-center rounded-xl border border-white/10 bg-slate-900/60 text-slate-300 transition hover:border-purple-400/50 hover:text-white"
             >
-              <FaEnvelope size={13} />
+              <FaEnvelope size={14} />
             </a>
           </div>
 

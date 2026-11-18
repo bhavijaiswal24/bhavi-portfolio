@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#090d16] text-slate-100 flex flex-col selection:bg-purple-500/30 selection:text-purple-200">
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#090d16] text-slate-100 flex flex-col selection:bg-purple-500/30 selection:text-purple-200">
       <Navbar />
 
       <main className="flex-grow">

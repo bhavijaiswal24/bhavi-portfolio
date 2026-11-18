@@ -81,45 +81,45 @@ function Certifications() {
   ];
 
   return (
-    <section id="certifications" className="relative py-24 px-6 bg-[#0b0f19]">
+    <section id="certifications" className="relative py-16 sm:py-24 px-4 sm:px-6 bg-[#0b0f19]">
       {/* Background glow */}
-      <div className="pointer-events-none absolute top-1/2 right-1/4 h-80 w-80 rounded-full bg-purple-600/5 blur-[120px]" />
+      <div className="pointer-events-none absolute top-1/2 right-1/4 h-80 sm:h-96 w-80 sm:w-96 rounded-full bg-purple-600/5 blur-[120px]" />
 
       <div className="mx-auto max-w-7xl">
         {/* Section Heading */}
-        <div className="mb-16 text-center">
+        <div className="mb-12 sm:mb-16 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/20 bg-purple-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-purple-300">
             Merit & Accreditations
           </div>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="mt-4 text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight break-words">
             Certifications &{" "}
             <span className="bg-gradient-to-r from-purple-400 via-indigo-300 to-blue-400 bg-clip-text text-transparent">
               Achievements
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-slate-400 text-sm sm:text-base">
+          <p className="mx-auto mt-4 max-w-2xl text-slate-400 text-xs sm:text-base">
             Verified technical specializations, merit scholarships, and competitive recognitions in computer science.
           </p>
         </div>
 
         {/* Bento Grid: Achievements (Top) & Certifications (Bottom) */}
-        <div className="mb-14">
-          <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+        <div className="mb-12 sm:mb-14">
+          <h3 className="text-lg sm:text-xl font-bold text-white mb-5 sm:mb-6 flex items-center gap-2">
             <FaTrophy className="text-purple-400" size={18} />
             <span>Key Honors & Recognitions</span>
           </h3>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {achievements.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <div
                   key={idx}
-                  className="group relative flex flex-col justify-between rounded-2xl border border-white/10 bg-slate-900/40 p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-purple-500/40 hover:bg-slate-900/70"
+                  className="group relative flex flex-col justify-between rounded-2xl border border-white/10 bg-slate-900/40 p-4 sm:p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-purple-500/40 hover:bg-slate-900/70"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className={`text-2xl ${item.color}`}>
+                    <div className="flex items-center justify-between mb-3.5 sm:mb-4">
+                      <span className={`text-xl sm:text-2xl ${item.color}`}>
                         <Icon />
                       </span>
                       <span className="rounded-full bg-purple-500/10 border border-purple-500/20 px-2 py-0.5 text-[10px] font-semibold text-purple-300">
@@ -127,7 +127,7 @@ function Certifications() {
                       </span>
                     </div>
 
-                    <h4 className="text-base font-bold text-white group-hover:text-purple-300 transition-colors">
+                    <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-purple-300 transition-colors">
                       {item.title}
                     </h4>
 
@@ -135,7 +135,7 @@ function Certifications() {
                       {item.organization}
                     </p>
 
-                    <p className="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                    <p className="text-xs text-slate-400 mt-2 sm:mt-2.5 leading-relaxed">
                       {item.description}
                     </p>
                   </div>
@@ -147,28 +147,28 @@ function Certifications() {
 
         {/* Certifications Grid */}
         <div>
-          <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <h3 className="text-lg sm:text-xl font-bold text-white mb-5 sm:mb-6 flex items-center gap-2">
             <FaCertificate className="text-blue-400" size={18} />
             <span>Specialized Course Certifications</span>
           </h3>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
             {certifications.map((cert, index) => (
               <div
                 key={index}
-                className="group flex flex-col justify-between rounded-2xl border border-white/10 bg-slate-900/40 p-6 sm:p-7 backdrop-blur-xl transition duration-300 hover:border-blue-500/40 hover:bg-slate-900/70"
+                className="group flex flex-col justify-between rounded-2xl border border-white/10 bg-slate-900/40 p-4 sm:p-6 md:p-7 backdrop-blur-xl transition duration-300 hover:border-blue-500/40 hover:bg-slate-900/70"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
                     <span className="font-mono text-xs font-bold uppercase tracking-wider text-blue-400">
                       {cert.issuer}
                     </span>
-                    <span className="rounded-full border border-white/10 bg-slate-800/60 px-2.5 py-0.5 text-[11px] font-medium text-slate-300">
+                    <span className="rounded-full border border-white/10 bg-slate-800/60 px-2 sm:px-2.5 py-0.5 text-[10px] sm:text-[11px] font-medium text-slate-300">
                       {cert.badge}
                     </span>
                   </div>
 
-                  <h4 className="text-lg font-bold text-white group-hover:text-blue-300 transition-colors">
+                  <h4 className="text-base sm:text-lg font-bold text-white group-hover:text-blue-300 transition-colors">
                     {cert.title}
                   </h4>
 
@@ -177,7 +177,7 @@ function Certifications() {
                   </p>
                 </div>
 
-                <div className="mt-5 flex flex-wrap gap-2 border-t border-white/5 pt-4">
+                <div className="mt-4 sm:mt-5 flex flex-wrap gap-1.5 sm:gap-2 border-t border-white/5 pt-3.5 sm:pt-4">
                   {cert.tags.map((tag) => (
                     <span
                       key={tag}
